@@ -35,13 +35,6 @@
    starting point now, not kelp-green.
    ============================================================ */
 
-@font-face{font-family:'Zeist';src:url('assets/fonts/ZeistN2-Light.otf') format('opentype');font-weight:300;font-style:normal;font-display:swap}
-@font-face{font-family:'Zeist';src:url('assets/fonts/ZeistN2-Regular.otf') format('opentype');font-weight:400;font-style:normal;font-display:swap}
-@font-face{font-family:'Zeist';src:url('assets/fonts/ZeistN2-Medium.otf') format('opentype');font-weight:500;font-style:normal;font-display:swap}
-@font-face{font-family:'Zeist';src:url('assets/fonts/ZeistN2-SemiBold.otf') format('opentype');font-weight:600;font-style:normal;font-display:swap}
-@font-face{font-family:'Zeist';src:url('assets/fonts/ZeistN2-Bold.otf') format('opentype');font-weight:700;font-style:normal;font-display:swap}
-@font-face{font-family:'DM Mono';src:url('assets/fonts/DMMono-Medium.ttf') format('truetype');font-weight:500;font-style:normal;font-display:swap}
-
 :root{
   --abyss:#041738;         /* OceanX Blue: deepest section fills (footer, video plates) */
   --deep:#002F6C;          /* Twilight Blue */
@@ -57,7 +50,6 @@
   --white-line:rgba(234,247,250,.26);
   --shadow:0 20px 55px rgba(2,23,56,.18);
   --radius:1.1rem;
-  --mono:"DM Mono","SFMono-Regular",monospace;
 }
 
 /* ---------- Reset & base ---------- */

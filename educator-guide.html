@@ -1,115 +1,209 @@
 <!doctype html>
 <html lang="en-GB">
+
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>[Programme Name] | Educator Guide</title>
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23002F6C'/%3E%3C/svg%3E">
-<style>
-/* Token roles: --deep/--ocean = brand blue accents, --moss = label accent
-   (was "--kelp" in the Kelp original — renamed, it's generic), --lime =
-   highlight. Change these per programme; everything else references them. */
-@font-face{font-family:'Zeist';src:url('assets/fonts/ZeistN2-Light.otf') format('opentype');font-weight:300;font-style:normal;font-display:swap}
-@font-face{font-family:'Zeist';src:url('assets/fonts/ZeistN2-Regular.otf') format('opentype');font-weight:400;font-style:normal;font-display:swap}
-@font-face{font-family:'Zeist';src:url('assets/fonts/ZeistN2-Medium.otf') format('opentype');font-weight:500;font-style:normal;font-display:swap}
-@font-face{font-family:'Zeist';src:url('assets/fonts/ZeistN2-SemiBold.otf') format('opentype');font-weight:600;font-style:normal;font-display:swap}
-@font-face{font-family:'Zeist';src:url('assets/fonts/ZeistN2-Bold.otf') format('opentype');font-weight:700;font-style:normal;font-display:swap}
-@font-face{font-family:'DM Mono';src:url('assets/fonts/DMMono-Medium.ttf') format('truetype');font-weight:500;font-style:normal;font-display:swap}
-:root{--deep:#002F6C;--ocean:#0072CE;--moss:#2DA2BF;--lime:#FFC846;--paper:#fff;--wash:#eef2e7;--ink:#0b2940;--muted:#5B6770;--line:rgba(11,41,64,.22);--font:"Zeist","Avenir Next",Avenir,Arial,sans-serif;--mono:"DM Mono","SFMono-Regular",monospace}
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:#dfe6e3;color:var(--ink);font-family:var(--font);line-height:1.4;-webkit-print-color-adjust:exact;print-color-adjust:exact}
-/* On-screen only — hidden entirely when printing */
-.print-bar{width:min(210mm,calc(100% - 24px));margin:14px auto 0;padding:10px 14px;display:flex;align-items:center;justify-content:space-between;gap:16px;background:#fff;border-radius:8px;box-shadow:0 2px 14px rgba(6,59,67,.1);font-size:12px;color:var(--muted)}
-.print-nav{flex:1 1 auto;display:flex;align-items:center;gap:8px;flex-wrap:wrap;min-width:0}
-.print-nav a{color:var(--ocean);text-decoration:none;font-weight:700}
-.print-nav a:hover{text-decoration:underline}
-.print-nav .sep{color:var(--line)}
-.print-nav .switch{margin-left:auto;padding-left:8px}
-button{padding:8px 14px;border:0;border-radius:99px;color:#fff;background:var(--deep);font:800 10px/1 var(--font);letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
-/* A4 sheet */
-.sheet{width:210mm;min-height:297mm;margin:14px auto 24px;padding:13mm 14mm 10mm;display:flex;flex-direction:column;background:var(--paper);box-shadow:0 6px 26px rgba(6,59,67,.14)}
-header{display:flex;align-items:flex-end;justify-content:space-between;gap:12mm;padding-bottom:5mm;border-bottom:1px solid var(--ink)}
-.eyebrow,.label,.col-label{color:var(--moss);font-size:7.2px;font-weight:850;letter-spacing:.15em;text-transform:uppercase;font-family:var(--mono)}
-h1{margin-top:2mm;font-size:30px;line-height:.92;letter-spacing:-.04em;text-transform:uppercase}
-h1.page2-title{font-size:24px}
-.pills{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:2mm}
-.pills span{padding:1.5mm 2.4mm;color:#fff;background:var(--deep);border-radius:99px;font-size:6.7px;font-weight:800}
-.content{flex:1}
-.label{margin:5mm 0 1.5mm}
-.question{max-width:155mm;font-size:24px;line-height:1.1;letter-spacing:-.035em}
-.body{color:var(--muted);font-size:8.2px}
-.body strong{color:var(--ink)}
-.outcomes{display:grid;grid-template-columns:repeat(3,1fr);gap:3mm}
-.outcome{min-height:29mm;padding:3mm;border-top:3px solid var(--ocean);background:var(--wash)}
-.outcome b{display:block;margin-bottom:1.5mm;color:var(--moss);font-size:7px;letter-spacing:.12em;text-transform:uppercase}
-.outcome p{font-size:7.4px;color:var(--muted)}
-.journey{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line)}
-.journey div{min-height:24mm;padding:3mm}
-.journey div+div{border-left:1px solid var(--line)}
-.journey b{display:block;margin-bottom:1mm;color:var(--ocean);font-size:8px;text-transform:uppercase}
-.journey span{color:var(--muted);font-size:7px}
-.two-col{display:grid;grid-template-columns:1fr 1fr;gap:7mm}
-.panel{padding:4mm;border:1px solid var(--line)}
-.panel p,.panel li{color:var(--muted);font-size:7.5px}
-.panel ul{padding-left:4mm}
-.panel li+li{margin-top:1mm}
-.causal{display:flex;align-items:center;gap:2mm;margin-top:2mm}
-.causal span{flex:1;padding:2.2mm 1mm;border:1px solid var(--line);font-size:6.5px;font-weight:800;text-align:center}
-.causal i{color:var(--ocean);font-style:normal}
-.sequence{display:grid;gap:3mm;margin-top:5mm}
-.phase{border:1px solid var(--line)}
-.phase-head{display:flex;justify-content:space-between;align-items:center;padding:2.3mm 3mm;color:#fff;background:var(--deep)}
-.phase-head b{font-size:8.5px;text-transform:uppercase}
-.phase-head span{padding:1mm 2mm;color:var(--deep);background:var(--lime);border-radius:99px;font-size:6.5px;font-weight:850;text-transform:uppercase}
-.phase-body{display:grid;grid-template-columns:.9fr 1.15fr 1fr;gap:0}
-.phase-body>div{min-height:29mm;padding:3mm}
-.phase-body>div+div{border-left:1px solid var(--line)}
-.col-label{margin-bottom:1.2mm;font-size:6.4px}
-.col-copy{color:var(--muted);font-size:7px}
-.col-copy strong{color:var(--ink)}
-.notes{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-top:4mm}
-.note{padding:3mm;background:var(--wash);border-left:3px solid var(--moss)}
-.note h3{margin-bottom:1mm;font-size:8px;text-transform:uppercase}
-.note p{color:var(--muted);font-size:7px}
-.note.wide{grid-column:1/-1}
-.footer{display:flex;align-items:flex-end;justify-content:space-between;margin-top:4mm;padding-top:3mm;border-top:1px solid var(--line)}
-.footer img{width:31mm;height:auto}
-.footer span{color:var(--muted);font-size:6.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
-@page{size:A4 portrait;margin:0}
-@media print{body{background:#fff}.print-bar{display:none}.sheet{width:210mm;height:297mm;min-height:297mm;margin:0;box-shadow:none;break-after:page}.sheet:last-child{break-after:auto}}
-@media screen and (max-width:840px){body{background:#fff}.print-bar{width:100%;margin:0;border-radius:0;flex-wrap:wrap;row-gap:8px}.print-nav{width:100%}.print-nav .switch{margin-left:0;flex-basis:100%}button{flex:0 0 auto}.sheet{width:100%;min-height:0;margin:0;padding:28px 20px;box-shadow:none}header{display:block}.pills{justify-content:flex-start;margin-top:18px}h1{font-size:46px}.label{margin-top:28px;font-size:9px}.question{font-size:30px}.body{font-size:15px}.outcomes,.journey,.two-col,.phase-body,.notes{display:block}.outcome,.journey div,.panel,.phase-body>div,.note{margin-bottom:16px;padding:18px;min-height:0}.journey div+div,.phase-body>div+div{border-left:0;border-top:1px solid var(--line)}.outcome p,.journey span,.panel p,.panel li,.col-copy,.note p{font-size:14px}.outcome b,.journey b,.col-label{font-size:10px}.causal{align-items:stretch;flex-direction:column}.causal span{width:100%;padding:12px;font-size:12px}.phase-head{padding:12px 14px}.phase-head b{font-size:13px}.phase-body>div{margin:0}.footer{margin-top:28px}.footer img{width:115px}}
-</style>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width,initial-scale=1">
+     <title>[Programme Name] | Educator Guide</title>
+     <link rel="stylesheet" href="main.css">
+     <link rel="stylesheet" href="activity.css">
+     <link rel="icon" type="image/svg+xml"
+          href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23002F6C'/%3E%3C/svg%3E">
 </head>
+
 <body>
-<!-- Back link uses history.back() with an index.html fallback, so it
+     <!-- Back link uses history.back() with an index.html fallback, so it
      works whether the guide was opened from the homepage or directly
      (e.g. a bookmark / shared link). Don't hardcode it to always go
      to index.html — see the commit history in I Am Kelp / Seagrass
      Stories for why this matters. -->
-<aside class="print-bar"><nav class="print-nav"><a href="index.html" onclick="if(history.length>1){history.back();return false;}">Back to [Programme Name]</a><span class="sep">·</span><b>Educator Guide</b><a class="switch" href="learner-activity.html">View Learner Activity</a></nav><button onclick="window.print()">Print / Save PDF</button></aside>
+     <aside class="print-bar">
+          <nav class="print-nav"><a href="index.html" onclick="if(history.length>1){history.back();return false;}">Back
+                    to [Programme Name]</a><span class="sep">·</span><b>Educator Guide</b><a class="switch"
+                    href="learner-activity.html">View Learner Activity</a></nav><button onclick="window.print()">Print /
+               Save PDF</button>
+     </aside>
 
-<!-- ============ PAGE 1 — OVERVIEW ============ -->
-<main class="sheet"><div class="content">
-<header><div><div class="eyebrow">OceanX Education · Educator guide</div><h1>[Programme Name]</h1></div><div class="pills"><span>Ages [00–00]</span><span>[00–00] minutes</span><span>Groups of [0–0]</span></div></header>
-<div class="label">Driving question</div><div class="question">[Driving question — same as the web page headline.]</div>
-<div class="label">Experience overview</div><p class="body">[Same paragraph as the .overview section on the web page.]</p>
-<div class="label">Learning intention</div><p class="body">[Same intention statement as the web page.]</p>
-<div class="label">Learning outcomes</div><div class="outcomes"><article class="outcome"><b>Do</b><p>[Do outcome — same as web page.]</p></article><article class="outcome"><b>Think</b><p>[Think outcome — same as web page.]</p></article><article class="outcome"><b>Feel</b><p>[Feel outcome — same as web page.]</p></article></div>
-<div class="label">Learning journey</div><div class="journey"><div><b>Explore</b><span>[Step 1 short title]</span></div><div><b>Investigate</b><span>[Step 2 short title]</span></div><div><b>Reflect</b><span>[Step 3 short title]</span></div><div><b>Create</b><span>[Step 4 short title]</span></div></div>
-<div class="two-col"><div><div class="label">What you need</div><div class="panel"><ul><li>Internet-connected display and learner devices</li><li>Access to the [Programme Name] webpage[ and game]</li><li>[Any special device requirement, e.g. webcam — delete if none]</li><li>One Learner Activity per learner or group</li><li>[Any physical materials needed]</li></ul></div></div><div><div class="label">Before you begin</div><div class="panel"><p><strong>Core relationship:</strong> [One or two sentences explaining the key mechanism/relationship the whole session hinges on.]</p><!-- Optional: a causal chain diagram, delete if not applicable --><div class="causal"><span>[Cause]</span><i>·</i><span>[Effect 1]</span><i>·</i><span>[Effect 2]</span><i>·</i><span>[Effect 3]</span></div></div></div></div>
-</div><footer class="footer"><img src="assets/logos/OceanX-Education-Logo-Dark.png" alt="OceanX Education"><span>[Programme Name] · Page 1</span></footer></main>
+     <!-- ============ PAGE 1 — OVERVIEW ============ -->
+     <main class="sheet">
+          <div class="content">
+               <header>
+                    <div>
+                         <div class="eyebrow">OceanX Education · Educator guide</div>
+                         <h1>[Programme Name]</h1>
+                    </div>
+                    <div class="pills"><span>Ages [00–00]</span><span>[00–00] minutes</span><span>Groups of [0–0]</span>
+                    </div>
+               </header>
+               <div class="label">Driving question</div>
+               <div class="question">[Driving question — same as the web page headline.]</div>
+               <div class="label">Experience overview</div>
+               <p class="body">[Same paragraph as the .overview section on the web page.]</p>
+               <div class="label">Learning intention</div>
+               <p class="body">[Same intention statement as the web page.]</p>
+               <div class="label">Learning outcomes</div>
+               <div class="outcomes">
+                    <article class="outcome"><b>Do</b>
+                         <p>[Do outcome — same as web page.]</p>
+                    </article>
+                    <article class="outcome"><b>Think</b>
+                         <p>[Think outcome — same as web page.]</p>
+                    </article>
+                    <article class="outcome"><b>Feel</b>
+                         <p>[Feel outcome — same as web page.]</p>
+                    </article>
+               </div>
+               <div class="label">Learning journey</div>
+               <div class="journey">
+                    <div><b>Explore</b><span>[Step 1 short title]</span></div>
+                    <div><b>Investigate</b><span>[Step 2 short title]</span></div>
+                    <div><b>Reflect</b><span>[Step 3 short title]</span></div>
+                    <div><b>Create</b><span>[Step 4 short title]</span></div>
+               </div>
+               <div class="two-col">
+                    <div>
+                         <div class="label">What you need</div>
+                         <div class="panel">
+                              <ul>
+                                   <li>Internet-connected display and learner devices</li>
+                                   <li>Access to the [Programme Name] webpage[ and game]</li>
+                                   <li>[Any special device requirement, e.g. webcam — delete if none]</li>
+                                   <li>One Learner Activity per learner or group</li>
+                                   <li>[Any physical materials needed]</li>
+                              </ul>
+                         </div>
+                    </div>
+                    <div>
+                         <div class="label">Before you begin</div>
+                         <div class="panel">
+                              <p><strong>Core relationship:</strong> [One or two sentences explaining the key
+                                   mechanism/relationship the whole session hinges on.]</p>
+                              <!-- Optional: a causal chain diagram, delete if not applicable -->
+                              <div class="causal"><span>[Cause]</span><i>·</i><span>[Effect
+                                        1]</span><i>·</i><span>[Effect 2]</span><i>·</i><span>[Effect 3]</span></div>
+                         </div>
+                    </div>
+               </div>
+          </div>
+          <footer class="footer"><img src="assets/logos/OceanX-Education-Logo-Dark.png"
+                    alt="OceanX Education"><span>[Programme Name] · Page 1</span></footer>
+     </main>
 
-<!-- ============ PAGE 2 — FACILITATION GUIDE ============ -->
-<main class="sheet"><div class="content">
-<header><div><div class="eyebrow">Facilitation guide</div><h1 class="page2-title">Explore · Investigate · Reflect · Create</h1></div></header>
-<div class="sequence">
-<section class="phase"><div class="phase-head"><b>1. Explore · [Step 1 short title]</b><span>15 min</span></div><div class="phase-body"><div><div class="col-label">Learner activity</div><p class="col-copy">[What learners do in this phase. If there's more than one video, have groups split them up rather than everyone watching all of them, holding 1–2 questions in mind while watching, then debrief the rest using See/Think/Wonder.]</p></div><div><div class="col-label">Key questions</div><p class="col-copy"><strong>SEE:</strong> [Observation question]<br><strong>THINK:</strong> [Interpretation question]<br><strong>WONDER:</strong> [Open question]</p></div><div><div class="col-label">Evidence of learning</div><p class="col-copy">[What tells you learners engaged with this phase successfully.]</p></div></div></section>
-<section class="phase"><div class="phase-head"><b>2. Investigate · [Step 2 short title]</b><span>15 min</span></div><div class="phase-body"><div><div class="col-label">Learner activity</div><p class="col-copy">[What learners do in this phase.]</p></div><div><div class="col-label">Key questions</div><p class="col-copy">[Question 1]<br>[Question 2]<br>[Question 3]</p></div><div><div class="col-label">Evidence of learning</div><p class="col-copy">[What tells you learners engaged with this phase successfully.]</p></div></div></section>
-<section class="phase"><div class="phase-head"><b>3. Reflect · [Step 3 short title]</b><span>15 min</span></div><div class="phase-body"><div><div class="col-label">Learner activity</div><p class="col-copy">[What learners do in this phase.]</p></div><div><div class="col-label">Key questions</div><p class="col-copy">[Question 1]<br>[Question 2]</p></div><div><div class="col-label">Evidence of learning</div><p class="col-copy">[What tells you learners engaged with this phase successfully.]</p></div></div></section>
-<section class="phase"><div class="phase-head"><b>4. Create · [Step 4 short title]</b><span>15 min</span></div><div class="phase-body"><div><div class="col-label">Learner activity</div><p class="col-copy">[What learners do in this phase.]</p></div><div><div class="col-label">Key questions</div><p class="col-copy">[Question 1]<br>[Question 2]</p></div><div><div class="col-label">Evidence of learning</div><p class="col-copy">[What tells you learners engaged with this phase successfully.]</p></div></div></section>
-</div>
-<!-- Note boxes: keep the See-Think-Wonder one if you use that routine
+     <!-- ============ PAGE 2 — FACILITATION GUIDE ============ -->
+     <main class="sheet">
+          <div class="content">
+               <header>
+                    <div>
+                         <div class="eyebrow">Facilitation guide</div>
+                         <h1 class="page2-title">Explore · Investigate · Reflect · Create</h1>
+                    </div>
+               </header>
+               <div class="sequence">
+                    <section class="phase">
+                         <div class="phase-head"><b>1. Explore · [Step 1 short title]</b><span>15 min</span></div>
+                         <div class="phase-body">
+                              <div>
+                                   <div class="col-label">Learner activity</div>
+                                   <p class="col-copy">[What learners do in this phase. If there's more than one video,
+                                        have groups split them up rather than everyone watching all of them, holding 1–2
+                                        questions in mind while watching, then debrief the rest using See/Think/Wonder.]
+                                   </p>
+                              </div>
+                              <div>
+                                   <div class="col-label">Key questions</div>
+                                   <p class="col-copy"><strong>SEE:</strong> [Observation
+                                        question]<br><strong>THINK:</strong> [Interpretation
+                                        question]<br><strong>WONDER:</strong> [Open question]</p>
+                              </div>
+                              <div>
+                                   <div class="col-label">Evidence of learning</div>
+                                   <p class="col-copy">[What tells you learners engaged with this phase successfully.]
+                                   </p>
+                              </div>
+                         </div>
+                    </section>
+                    <section class="phase">
+                         <div class="phase-head"><b>2. Investigate · [Step 2 short title]</b><span>15 min</span></div>
+                         <div class="phase-body">
+                              <div>
+                                   <div class="col-label">Learner activity</div>
+                                   <p class="col-copy">[What learners do in this phase.]</p>
+                              </div>
+                              <div>
+                                   <div class="col-label">Key questions</div>
+                                   <p class="col-copy">[Question 1]<br>[Question 2]<br>[Question 3]</p>
+                              </div>
+                              <div>
+                                   <div class="col-label">Evidence of learning</div>
+                                   <p class="col-copy">[What tells you learners engaged with this phase successfully.]
+                                   </p>
+                              </div>
+                         </div>
+                    </section>
+                    <section class="phase">
+                         <div class="phase-head"><b>3. Reflect · [Step 3 short title]</b><span>15 min</span></div>
+                         <div class="phase-body">
+                              <div>
+                                   <div class="col-label">Learner activity</div>
+                                   <p class="col-copy">[What learners do in this phase.]</p>
+                              </div>
+                              <div>
+                                   <div class="col-label">Key questions</div>
+                                   <p class="col-copy">[Question 1]<br>[Question 2]</p>
+                              </div>
+                              <div>
+                                   <div class="col-label">Evidence of learning</div>
+                                   <p class="col-copy">[What tells you learners engaged with this phase successfully.]
+                                   </p>
+                              </div>
+                         </div>
+                    </section>
+                    <section class="phase">
+                         <div class="phase-head"><b>4. Create · [Step 4 short title]</b><span>15 min</span></div>
+                         <div class="phase-body">
+                              <div>
+                                   <div class="col-label">Learner activity</div>
+                                   <p class="col-copy">[What learners do in this phase.]</p>
+                              </div>
+                              <div>
+                                   <div class="col-label">Key questions</div>
+                                   <p class="col-copy">[Question 1]<br>[Question 2]</p>
+                              </div>
+                              <div>
+                                   <div class="col-label">Evidence of learning</div>
+                                   <p class="col-copy">[What tells you learners engaged with this phase successfully.]
+                                   </p>
+                              </div>
+                         </div>
+                    </section>
+               </div>
+               <!-- Note boxes: keep the See-Think-Wonder one if you use that routine
      in Explore (cite Harvard Project Zero, as here), and swap the
      other two for whatever facilitation notes are relevant. -->
-<div class="notes"><article class="note wide"><h3>See &bull; Think &bull; Wonder</h3><p>Use this routine during Explore to move from observation to inquiry. Give learners time to notice before inviting explanations. Adapted from Harvard Project Zero's <i>See-Think-Wonder</i> thinking routine.</p></article><article class="note"><h3>[Facilitation note title]</h3><p>[A concrete tip for running this phase well.]</p></article><article class="note"><h3>[Facilitation note title]</h3><p>[A concrete tip for running this phase well.]</p></article><article class="note wide"><h3>After the session</h3><p>[What to capture/debrief after running this — what worked, what to adjust.]</p></article></div>
-</div><footer class="footer"><img src="assets/logos/OceanX-Education-Logo-Dark.png" alt="OceanX Education"><span>[Programme Name] · Page 2</span></footer></main>
-</body></html>
+               <div class="notes">
+                    <article class="note wide">
+                         <h3>See &bull; Think &bull; Wonder</h3>
+                         <p>Use this routine during Explore to move from observation to inquiry. Give learners time to
+                              notice before inviting explanations. Adapted from Harvard Project Zero's
+                              <i>See-Think-Wonder</i> thinking routine.</p>
+                    </article>
+                    <article class="note">
+                         <h3>[Facilitation note title]</h3>
+                         <p>[A concrete tip for running this phase well.]</p>
+                    </article>
+                    <article class="note">
+                         <h3>[Facilitation note title]</h3>
+                         <p>[A concrete tip for running this phase well.]</p>
+                    </article>
+                    <article class="note wide">
+                         <h3>After the session</h3>
+                         <p>[What to capture/debrief after running this — what worked, what to adjust.]</p>
+                    </article>
+               </div>
+          </div>
+          <footer class="footer"><img src="assets/logos/OceanX-Education-Logo-Dark.png"
+                    alt="OceanX Education"><span>[Programme Name] · Page 2</span></footer>
+     </main>
+</body>
+
+</html>

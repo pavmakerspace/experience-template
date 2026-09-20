@@ -1,0 +1,1110 @@
+
+          /* Token roles: --deep/--ocean = brand blue accents, --moss = label accent
+   (was "--kelp" in the Kelp original — renamed, it's generic), --lime =
+   highlight. Change these per programme; everything else references them. */
+          :root {
+               --deep: #002F6C;
+               --ocean: #0072CE;
+               --moss: #2DA2BF;
+               --lime: #FFC846;
+               --paper: #fff;
+               --wash: #eef2e7;
+               --ink: #0b2940;
+               --muted: #5B6770;
+               --line: rgba(11, 41, 64, .22);
+          }
+
+          * {
+               box-sizing: border-box;
+               margin: 0;
+               padding: 0
+          }
+
+          body {
+               background: #dfe6e3;
+               color: var(--ink);
+               font-family: var(--font);
+               line-height: 1.4;
+               -webkit-print-color-adjust: exact;
+               print-color-adjust: exact
+          }
+
+          /* On-screen only — hidden entirely when printing */
+          .print-bar {
+               width: min(210mm, calc(100% - 24px));
+               margin: 14px auto 0;
+               padding: 10px 14px;
+               display: flex;
+               align-items: center;
+               justify-content: space-between;
+               gap: 16px;
+               background: #fff;
+               border-radius: 8px;
+               box-shadow: 0 2px 14px rgba(6, 59, 67, .1);
+               font-size: 12px;
+               color: var(--muted)
+          }
+
+          .print-nav {
+               flex: 1 1 auto;
+               display: flex;
+               align-items: center;
+               gap: 8px;
+               flex-wrap: wrap;
+               min-width: 0
+          }
+
+          .print-nav a {
+               color: var(--ocean);
+               text-decoration: none;
+               font-weight: 700
+          }
+
+          .print-nav a:hover {
+               text-decoration: underline
+          }
+
+          .print-nav .sep {
+               color: var(--line)
+          }
+
+          .print-nav .switch {
+               margin-left: auto;
+               padding-left: 8px
+          }
+
+          button {
+               padding: 8px 14px;
+               border: 0;
+               border-radius: 99px;
+               color: #fff;
+               background: var(--deep);
+               font: 800 10px/1 var(--font);
+               letter-spacing: .08em;
+               text-transform: uppercase;
+               cursor: pointer
+          }
+
+          /* A4 sheet */
+          .sheet {
+               width: 210mm;
+               min-height: 297mm;
+               margin: 14px auto 24px;
+               padding: 13mm 14mm 10mm;
+               display: flex;
+               flex-direction: column;
+               background: var(--paper);
+               box-shadow: 0 6px 26px rgba(6, 59, 67, .14)
+          }
+
+          header {
+               display: flex;
+               align-items: flex-end;
+               justify-content: space-between;
+               gap: 12mm;
+               padding-bottom: 5mm;
+               border-bottom: 1px solid var(--ink)
+          }
+
+          .eyebrow,
+          .label,
+          .col-label {
+               color: var(--moss);
+               font-size: 7.2px;
+               font-weight: 850;
+               letter-spacing: .15em;
+               text-transform: uppercase;
+               font-family: var(--mono)
+          }
+
+          h1 {
+               margin-top: 2mm;
+               font-size: 30px;
+               line-height: .92;
+               letter-spacing: -.04em;
+               text-transform: uppercase
+          }
+
+          h1.page2-title {
+               font-size: 24px
+          }
+
+          .pills {
+               display: flex;
+               flex-wrap: wrap;
+               justify-content: flex-end;
+               gap: 2mm
+          }
+
+          .pills span {
+               padding: 1.5mm 2.4mm;
+               color: #fff;
+               background: var(--deep);
+               border-radius: 99px;
+               font-size: 6.7px;
+               font-weight: 800
+          }
+
+          .content {
+               flex: 1
+          }
+
+          .label {
+               margin: 5mm 0 1.5mm
+          }
+
+          .question {
+               max-width: 155mm;
+               font-size: 24px;
+               line-height: 1.1;
+               letter-spacing: -.035em
+          }
+
+          .body {
+               color: var(--muted);
+            font-size: 10px
+          }
+
+          .body strong {
+               color: var(--ink)
+          }
+
+          .outcomes {
+               display: grid;
+               grid-template-columns: repeat(3, 1fr);
+               gap: 3mm
+          }
+
+          .outcome {
+               min-height: 29mm;
+               padding: 3mm;
+               border-top: 3px solid var(--ocean);
+               background: var(--wash)
+          }
+
+          .outcome b {
+               display: block;
+               margin-bottom: 1.5mm;
+               color: var(--moss);
+               font-size: 7px;
+               letter-spacing: .12em;
+               text-transform: uppercase
+          }
+
+          .outcome p {
+            font-size: 9px;
+               color: var(--muted)
+          }
+
+          .journey {
+               display: grid;
+               grid-template-columns: repeat(4, 1fr);
+               border: 1px solid var(--line)
+          }
+
+          .journey div {
+               min-height: 24mm;
+               padding: 3mm
+          }
+
+          .journey div+div {
+               border-left: 1px solid var(--line)
+          }
+
+          .journey b {
+               display: block;
+               margin-bottom: 1mm;
+               color: var(--ocean);
+               font-size: 8px;
+               text-transform: uppercase
+          }
+
+          .journey span {
+               color: var(--muted);
+            font-size: 8px
+          }
+
+          .two-col {
+               display: grid;
+               grid-template-columns: 1fr 1fr;
+               gap: 7mm
+          }
+
+          .panel {
+               padding: 4mm;
+               border: 1px solid var(--line)
+          }
+
+          .panel p,
+          .panel li {
+               color: var(--muted);
+            font-size: 9px
+          }
+
+          .panel ul {
+               padding-left: 4mm
+          }
+
+          .panel li+li {
+               margin-top: 1mm
+          }
+
+          .causal {
+               display: flex;
+               align-items: center;
+               gap: 2mm;
+               margin-top: 2mm
+          }
+
+          .causal span {
+               flex: 1;
+               padding: 2.2mm 1mm;
+               border: 1px solid var(--line);
+               font-size: 6.5px;
+               font-weight: 800;
+               text-align: center
+          }
+
+          .causal i {
+               color: var(--ocean);
+               font-style: normal
+          }
+
+          .sequence {
+               display: grid;
+               gap: 3mm;
+               margin-top: 5mm
+          }
+
+          .phase {
+               border: 1px solid var(--line)
+          }
+
+          .phase-head {
+               display: flex;
+               justify-content: space-between;
+               align-items: center;
+               padding: 2.3mm 3mm;
+               color: #fff;
+               background: var(--deep)
+          }
+
+          .phase-head b {
+            font-size: 9px;
+               text-transform: uppercase
+          }
+
+          .phase-head span {
+               padding: 1mm 2mm;
+               color: var(--deep);
+               background: var(--lime);
+               border-radius: 99px;
+               font-size: 7.5px;
+               font-weight: 850;
+               text-transform: uppercase
+          }
+
+          .phase-body {
+               display: grid;
+               grid-template-columns: .9fr 1.15fr 1fr;
+               gap: 0
+          }
+
+          .phase-body>div {
+               min-height: 29mm;
+               padding: 3mm
+          }
+
+          .phase-body>div+div {
+               border-left: 1px solid var(--line)
+          }
+
+          .col-label {
+               margin-bottom: 1.2mm;
+            font-size: 7.5px
+          }
+
+          .col-copy {
+               color: var(--muted);
+            font-size: 9px
+          }
+
+          .col-copy strong {
+               color: var(--ink)
+          }
+
+          .notes {
+               display: grid;
+               grid-template-columns: 1fr 1fr;
+               gap: 3mm;
+               margin-top: 4mm
+          }
+
+          .note {
+               padding: 3mm;
+               background: var(--wash);
+               border-left: 3px solid var(--moss)
+          }
+
+          .note h3 {
+               margin-bottom: 1mm;
+            font-size: 9px;
+               text-transform: uppercase
+          }
+
+          .note p {
+               color: var(--muted);
+            font-size: 9px
+          }
+
+          .note.wide {
+               grid-column: 1/-1
+          }
+
+          .footer {
+               display: flex;
+               align-items: flex-end;
+               justify-content: space-between;
+               margin-top: 4mm;
+               padding-top: 3mm;
+               border-top: 1px solid var(--line)
+          }
+
+          .footer img {
+            width: 24mm;
+               height: auto
+          }
+
+          .footer span {
+               color: var(--muted);
+            font-size: 7.5px;
+               font-weight: 800;
+               letter-spacing: .1em;
+               text-transform: uppercase
+          }
+
+          @page {
+               size: A4 portrait;
+               margin: 0
+          }
+
+          @media print {
+               body {
+                    background: #fff
+               }
+
+               .print-bar {
+                    display: none
+               }
+
+               .sheet {
+                    width: 210mm;
+                    height: 297mm;
+                    min-height: 297mm;
+                    margin: 0;
+                    box-shadow: none;
+                    break-after: page
+               }
+
+               .sheet:last-child {
+                    break-after: auto
+               }
+          }
+
+          @media screen and (max-width:840px) {
+               body {
+                    background: #fff
+               }
+
+               .print-bar {
+                    width: 100%;
+                    margin: 0;
+                    border-radius: 0;
+                    flex-wrap: wrap;
+                    row-gap: 8px
+               }
+
+               .print-nav {
+                    width: 100%
+               }
+
+               .print-nav .switch {
+                    margin-left: 0;
+                    flex-basis: 100%
+               }
+
+               button {
+                    flex: 0 0 auto
+               }
+
+               .sheet {
+                    width: 100%;
+                    min-height: 0;
+                    margin: 0;
+                    padding: 28px 20px;
+                    box-shadow: none
+               }
+
+               header {
+                    display: block
+               }
+
+               .pills {
+                    justify-content: flex-start;
+                    margin-top: 18px
+               }
+
+               h1 {
+                    font-size: 46px
+               }
+
+               .label {
+                    margin-top: 28px;
+                    font-size: 9px
+               }
+
+               .question {
+                    font-size: 30px
+               }
+
+               .body {
+                    font-size: 15px
+               }
+
+               .outcomes,
+               .journey,
+               .two-col,
+               .phase-body,
+               .notes {
+                    display: block
+               }
+
+               .outcome,
+               .journey div,
+               .panel,
+               .phase-body>div,
+               .note {
+                    margin-bottom: 16px;
+                    padding: 18px;
+                    min-height: 0
+               }
+
+               .journey div+div,
+               .phase-body>div+div {
+                    border-left: 0;
+                    border-top: 1px solid var(--line)
+               }
+
+               .outcome p,
+               .journey span,
+               .panel p,
+               .panel li,
+               .col-copy,
+               .note p {
+                    font-size: 14px
+               }
+
+               .outcome b,
+               .journey b,
+               .col-label {
+                    font-size: 10px
+               }
+
+               .causal {
+                    align-items: stretch;
+                    flex-direction: column
+               }
+
+               .causal span {
+                    width: 100%;
+                    padding: 12px;
+                    font-size: 12px
+               }
+
+               .phase-head {
+                    padding: 12px 14px
+               }
+
+               .phase-head b {
+                    font-size: 13px
+               }
+
+               .phase-body>div {
+                    margin: 0
+               }
+
+               .footer {
+                    margin-top: 28px
+               }
+
+               .footer img {
+                width: 90px
+               }
+          }
+
+
+    :root {
+      --line: rgba(11, 41, 64, .24);
+    }
+
+    body {
+      line-height: 1.3
+    }
+
+    .sheet {
+      position: relative;
+      width: 210mm;
+      min-height: 297mm;
+      margin: 14px auto 24px;
+      padding: 12mm 14mm 9mm;
+      overflow: hidden;
+      background: var(--paper);
+      box-shadow: 0 6px 26px rgba(6, 59, 67, .14)
+    }
+
+    header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10mm;
+      align-items: end;
+      margin-bottom: 4mm
+    }
+
+    .kicker,
+    .step {
+      font-size: 7.2px;
+      font-weight: 850;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      font-family: var(--mono)
+    }
+
+    .kicker,
+    .step {
+      color: var(--moss)
+    }
+
+    h1 {
+      font-size: 34px;
+      line-height: .88;
+      letter-spacing: -.05em;
+      text-transform: uppercase
+    }
+
+    h1 span {
+      display: block;
+      color: var(--ocean)
+    }
+
+    .strap {
+      margin-top: 2.5mm;
+      color: var(--muted);
+      font-size: 8.5px
+    }
+
+    .identity {
+      width: 55mm;
+      display: grid;
+      gap: 3mm
+    }
+
+    .identity label {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 3mm;
+      align-items: end;
+      font-size: 7px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase
+    }
+
+    .identity i {
+      height: 4mm;
+      border-bottom: 1px solid var(--ink)
+    }
+
+    .journey {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      margin-bottom: 4mm;
+      border-top: 1px solid var(--ink);
+      border-bottom: 1px solid var(--line)
+    }
+
+    .journey span {
+      padding: 2.1mm 0;
+      color: var(--muted);
+      font-size: 8px;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase
+    }
+
+    .journey b {
+      color: var(--ocean);
+      margin-right: 1mm
+    }
+
+    .section-head {
+      display: flex;
+      align-items: baseline;
+      gap: 2mm;
+      margin-bottom: 2mm
+    }
+
+    h2 {
+      font-size: 13px;
+      line-height: 1;
+      text-transform: uppercase
+    }
+
+    .hint {
+      margin-left: auto;
+      color: var(--muted);
+      font-size: 7.2px;
+      text-align: right
+    }
+
+    .explore-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 3mm;
+      margin-bottom: 3.5mm
+    }
+
+    .prompt {
+      min-height: 29mm;
+      padding: 3mm;
+      border-top: 3px solid var(--moss);
+      background: var(--wash)
+    }
+
+    .prompt h3 {
+      margin-bottom: 1.5mm;
+      font-size: 8px;
+      text-transform: uppercase
+    }
+
+    .prompt p {
+      font-size: 9px;
+      color: var(--muted)
+    }
+
+    .lines {
+      height: 14mm;
+      margin-top: 1.5mm;
+      background: repeating-linear-gradient(to bottom, transparent 0 4.3mm, var(--line) 4.5mm 4.7mm)
+    }
+
+    .middle {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 4mm;
+      margin-bottom: 3.5mm
+    }
+
+    .investigate,
+    .reflect {
+      padding: 3mm 4mm;
+      border: 1px solid var(--line)
+    }
+
+    .investigate {
+      border-left: 4px solid var(--ocean)
+    }
+
+    .investigate p,
+    .reflect p {
+      font-size: 9px;
+      color: var(--muted)
+    }
+
+    .chain {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2mm;
+      margin: 2mm 0
+    }
+
+    .chain span {
+      position: relative;
+      padding: 2mm 1.5mm;
+      border: 1px solid var(--line);
+      font-size: 8.5px;
+      font-weight: 800;
+      text-align: center
+    }
+
+    .chain span:not(:last-child):after {
+      content: "·";
+      position: absolute;
+      right: -2mm;
+      color: var(--ocean)
+    }
+
+    .reflect .lines {
+      height: 17mm
+    }
+
+    .create {
+      padding: 3.5mm 4mm 3mm;
+      border: 1px solid var(--ink);
+      border-top: 4px solid var(--deep)
+    }
+
+    .create-copy {
+      display: flex;
+      gap: 4mm;
+      align-items: baseline;
+      margin-bottom: 2mm
+    }
+
+    .create-copy p {
+      margin-left: auto;
+      max-width: 120mm;
+      color: var(--muted);
+      font-size: 9px;
+      text-align: right
+    }
+
+    /* Drawing/mapping canvas for the Create phase. If you have a custom
+   illustration (like Kelp's kelp-forest colouring page), drop it in
+   assets/images/ and point .forest at it. If not, leave the <img>
+   out entirely — .map's border + centre-label alone still works as
+   a blank canvas with labelled corner prompts. */
+    .map {
+      position: relative;
+      height: 89mm;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: #fff
+    }
+
+    .forest {
+      position: absolute;
+      z-index: 1;
+      left: 50%;
+      top: 48%;
+      width: 78mm;
+      max-width: 90%;
+      transform: translate(-50%, -50%)
+    }
+
+    .centre-label {
+      position: absolute;
+      z-index: 2;
+      left: 50%;
+      bottom: 7mm;
+      transform: translateX(-50%);
+      padding: 1.5mm 3mm;
+      background: #fff;
+      border: 1px solid var(--line);
+      font-size: 7px;
+      font-weight: 850;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      white-space: nowrap
+    }
+
+    .map-note {
+      position: absolute;
+      z-index: 2;
+      width: 37mm;
+      padding: 2mm;
+      background: rgba(255, 255, 255, .92);
+      border-bottom: 1px solid var(--line);
+      font-size: 8.5px;
+      color: var(--muted)
+    }
+
+    .map-note b {
+      display: block;
+      color: var(--moss);
+      font-size: 8.5px;
+      text-transform: uppercase
+    }
+
+    .n1 {
+      left: 4mm;
+      top: 5mm
+    }
+
+    .n2 {
+      right: 4mm;
+      top: 5mm
+    }
+
+    .n3 {
+      left: 4mm;
+      bottom: 6mm
+    }
+
+    .n4 {
+      right: 4mm;
+      bottom: 6mm
+    }
+
+    .finish {
+      margin-top: 2mm;
+      padding-top: 2mm;
+      border-top: 1px solid var(--line);
+      font-size: 9px
+    }
+
+    .finish b {
+      color: var(--ocean)
+    }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-top: 3mm;
+      padding-top: 2.5mm;
+      border-top: 1px solid var(--line)
+    }
+
+    footer span {
+      color: var(--muted);
+      font-size: 7.5px;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase
+    }
+
+    .logo {
+      width: 24mm;
+      height: auto
+    }
+
+    @page {
+      size: A4 portrait;
+      margin: 0
+    }
+
+    @media print {
+      body {
+        background: #fff
+      }
+
+      .print-bar {
+        display: none
+      }
+
+      .sheet {
+        width: 210mm;
+        height: 297mm;
+        min-height: 297mm;
+        margin: 0;
+        box-shadow: none
+      }
+    }
+
+    @media screen and (max-width:840px) {
+      body {
+        background: #fff
+      }
+
+      .print-bar {
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+        flex-wrap: wrap;
+        row-gap: 8px
+      }
+
+      .print-nav {
+        width: 100%
+      }
+
+      .print-nav .switch {
+        margin-left: 0;
+        flex-basis: 100%
+      }
+
+      button {
+        flex: 0 0 auto
+      }
+
+      .sheet {
+        width: 100%;
+        min-height: 0;
+        margin: 0;
+        padding: 28px 20px;
+        overflow: visible;
+        box-shadow: none
+      }
+
+      header {
+        display: block
+      }
+
+      .kicker {
+        font-size: 9px
+      }
+
+      h1 {
+        margin-top: 8px;
+        font-size: clamp(42px, 15vw, 62px)
+      }
+
+      .strap {
+        font-size: 14px
+      }
+
+      .identity {
+        width: 100%;
+        grid-template-columns: 1fr 1fr;
+        margin-top: 24px
+      }
+
+      .identity label {
+        font-size: 9px
+      }
+
+      .identity i {
+        height: 24px
+      }
+
+      .journey {
+        display: block;
+        margin: 28px 0
+      }
+
+      .journey span {
+        display: block;
+        padding: 12px 0;
+        border-bottom: 1px solid var(--line);
+        font-size: 10px
+      }
+
+      .section-head,
+      .create-copy {
+        display: block
+      }
+
+      .step {
+        display: block;
+        margin-bottom: 7px;
+        font-size: 9px
+      }
+
+      h2 {
+        font-size: 22px
+      }
+
+      .hint,
+      .create-copy p {
+        margin: 8px 0 0;
+        max-width: none;
+        font-size: 14px;
+        text-align: left
+      }
+
+      .explore-grid,
+      .middle {
+        display: block
+      }
+
+      .prompt,
+      .investigate,
+      .reflect {
+        margin-bottom: 18px;
+        padding: 18px
+      }
+
+      .prompt h3 {
+        font-size: 13px
+      }
+
+      .prompt p,
+      .investigate p,
+      .reflect p {
+        font-size: 14px
+      }
+
+      .lines,
+      .reflect .lines {
+        height: 110px;
+        background: repeating-linear-gradient(to bottom, transparent 0 28px, var(--line) 29px 30px)
+      }
+
+      .chain {
+        grid-template-columns: 1fr
+      }
+
+      .chain span {
+        padding: 12px;
+        font-size: 12px
+      }
+
+      .chain span:after {
+        display: none
+      }
+
+      .create {
+        padding: 18px
+      }
+
+      .map {
+        height: auto;
+        display: block;
+        padding: 16px 0
+      }
+
+      .map:before,
+      .map:after {
+        display: none
+      }
+
+      .forest {
+        position: static;
+        left: auto;
+        top: auto;
+        transform: none;
+        width: 70%;
+        height: auto;
+        margin: 0 auto 16px;
+        display: block
+      }
+
+      .map-note {
+        position: static;
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 12px 14px;
+        font-size: 13px
+      }
+
+      .map-note b {
+        font-size: 11px
+      }
+
+      .centre-label {
+        position: static;
+        display: block;
+        left: auto;
+        bottom: auto;
+        transform: none;
+        width: max-content;
+        max-width: 90%;
+        margin: 0 auto 16px;
+        white-space: normal;
+        text-align: center;
+        font-size: 12px
+      }
+
+      .finish {
+        font-size: 13px;
+        line-height: 1.5
+      }
+
+      footer {
+        margin-top: 24px
+      }
+
+      .logo {
+        width: 90px
+      }
+    }

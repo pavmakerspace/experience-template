@@ -1,0 +1,53 @@
+/* Shared typography foundation for all Experience Template pages. */
+@font-face {
+  font-family: 'Zeist';
+  src: url('assets/fonts/ZeistN2-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Zeist';
+  src: url('assets/fonts/ZeistN2-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Zeist';
+  src: url('assets/fonts/ZeistN2-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Zeist';
+  src: url('assets/fonts/ZeistN2-SemiBold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Zeist';
+  src: url('assets/fonts/ZeistN2-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DM Mono';
+  src: url('assets/fonts/DMMono-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --font: "Zeist", "Avenir Next", Avenir, Arial, sans-serif;
+  --mono: "DM Mono", "SFMono-Regular", monospace;
+}
