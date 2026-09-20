@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#002F6C">
+<meta name="description" content="[Programme Name] learning journey and classroom resources from OceanX Education.">
+<title>[Programme Name] | Learning Journey</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23002F6C'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to learning journey</a>
+
+<!-- ============ STICKY HEADER + PROGRESS NAV ============
+     The progress nav highlights the current step on scroll
+     (see script at the bottom) and jumps to + opens that step's
+     accordion when clicked. Keep the data-step values matching
+     the <details id="step-N"> ids below exactly. -->
+<header class="site-header">
+  <div class="shell nav">
+    <a class="brand" href="#top" aria-label="OceanX Education, [Programme Name] home">
+      <img src="assets/logos/OceanX-Education-Logo-White.png" alt="OceanX Education">
+      <span class="brand-divider" aria-hidden="true"></span>
+      <span class="brand-name">[Programme Name]</span>
+    </a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#journey">Journey</a>
+      <a href="#resources">Resources</a><!-- delete if you're not using the Further Reading section -->
+    </nav>
+  </div>
+  <div class="shell progress-shell">
+    <nav class="progress" aria-label="Learning journey progress">
+      <a href="#step-1" data-step="step-1"><span class="step-dot"></span><span>Explore</span></a>
+      <a href="#step-2" data-step="step-2"><span class="step-dot"></span><span>Investigate</span></a>
+      <a href="#step-3" data-step="step-3"><span class="step-dot"></span><span>Reflect</span></a>
+      <a href="#step-4" data-step="step-4"><span class="step-dot"></span><span>Create</span></a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ HERO ============
+     Single column by default: this matches I Am Kelp's actual hero,
+     which is just the text block below. .hero-content's grid still
+     reserves a second track (see styles.css) so a side panel can be
+     added back in without any CSS changes, but nothing renders there
+     by default. -->
+<section class="hero" id="top">
+  <div class="shell hero-content">
+    <div>
+      <h1>[Driving question: the one-line hook that frames the whole session]</h1>
+      <p class="hero-lead">[One sentence describing what the learner does in this experience, in second person.]</p>
+      <div class="meta">
+        <span>For educators</span>
+        <span>Ages [00–00]</span>
+        <span>[00–00] minutes</span>
+        <span>Groups of [0–0]</span>
+      </div>
+    </div>
+    <!-- Optional: a hero-side CTA card for a standalone game/tool
+         companion piece. Not part of I Am Kelp's actual page: only
+         add this if this specific programme genuinely has one.
+    <div class="play-panel">
+      <div class="status"><span class="status-dot"></span>[Companion tool name]</div>
+      <a class="play-button" href="[link to game/tool]" target="_blank" rel="noopener">
+        <strong>Play [Tool Name]</strong>
+        <span class="play-icon">▶</span>
+      </a>
+      <p class="play-note">[Any device note, e.g. "Camera access required" or "Works on tablet and desktop"; delete this line if there's no special requirement.]</p>
+    </div>
+    -->
+  </div>
+</section>
+
+<main id="main">
+
+  <!-- ============ OVERVIEW ============
+       One paragraph, full-bleed dark band. What is this experience,
+       in plain language: the "elevator pitch" a teacher reads before
+       deciding to run it. -->
+  <section class="overview">
+    <div class="shell">
+      <p>[One paragraph: what learners do and what they discover across the session, written for an educator skimming quickly.]</p>
+    </div>
+  </section>
+
+  <!-- ============ LEARNING INTENTION (light band) ============
+       Do / Think / Feel outcomes: see Design Tools/ in the parent
+       OceanX folder for the framework this maps to. Delete the
+       .outcomes column entirely if this programme doesn't use
+       Do/Think/Feel and just needs a single intention statement. -->
+  <section class="intention" id="about">
+    <div class="shell intention-grid">
+      <div>
+        <p class="section-kicker">Learning intention</p>
+        <p class="intention-statement">[One or two sentences: what should learners understand or be able to do by the end?]</p>
+        <div class="downloads">
+          <a href="learner-activity.html">Download Learner Activity<svg class="dl-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.5v8"/><path d="M4.5 6.5L8 10l3.5-3.5"/><path d="M2.5 12.5h11"/></svg></a>
+          <a href="educator-guide.html">Download Educator Guide<svg class="dl-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.5v8"/><path d="M4.5 6.5L8 10l3.5-3.5"/><path d="M2.5 12.5h11"/></svg></a>
+        </div>
+      </div>
+      <div class="outcomes" aria-label="Learning outcomes">
+        <div class="outcome"><b>Do</b><p>[An action/skill outcome: what learners will trace, build, connect or propose.]</p></div>
+        <div class="outcome"><b>Think</b><p>[An understanding outcome: what mental model or concept learners should walk away with.]</p></div>
+        <div class="outcome"><b>Feel</b><p>[An affective outcome: the emotional arc this experience is designed to produce.]</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ JOURNEY (accordion steps) ============
+       Explore / Investigate / Reflect / Create is this engagement's
+       standard Phase 2 loop (see Templates/Framework Alignment
+       Recommendations.md). Keep the phase names unless there's a
+       specific reason to change them.
+
+       IMPORTANT: do not remove the wrapping <span> around each
+       title, or the flex:1 rule on it in styles.css. Without it the
+       time badge drifts left/right depending on title length instead
+       of lining up in a column (this was a real bug, fixed once
+       already; see summary span:first-child in styles.css). -->
+  <section class="journey" id="journey">
+    <div class="shell">
+      <p class="section-kicker">The experience</p>
+      <h2>Explore. Investigate. Reflect. Create.</h2>
+      <div class="accordions">
+
+        <details id="step-1" open>
+          <summary><span><b>01 · Explore</b> [Short step title]</span><em>15 mins</em></summary>
+          <div class="detail-body">
+            <h3>[Step 1 lead-in line: get curious.]</h3>
+            <p>[If there's more than one video/reading and groups are larger than 1, name the split here using an action verb, e.g. "Split the videos across your group." Then: "As you watch, notice:"]</p>
+            <ul>
+              <li>[SEE-style question: what do you notice?]</li>
+              <li>[THINK-style question: what relationships/patterns can you see?]</li>
+            </ul>
+            <!-- Optional: a video grid. Use youtube-nocookie.com embeds for privacy.
+                 Assign each learner just 1-2 clips: four videos at ~5 min each
+                 already fills a 15-minute Explore box before any discussion
+                 happens, even when the group is splitting them up. If you
+                 need more source material, link the rest as Further
+                 Reading instead of stacking videos here. -->
+            <div class="video-grid">
+              <div class="video"><div class="video-frame"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/VIDEO_ID_1" title="[Video 1 title]" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><span>Watch video 01</span></div>
+              <div class="video"><div class="video-frame"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/VIDEO_ID_2" title="[Video 2 title]" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><span>Watch video 02</span></div>
+            </div>
+            <p>[Once they've watched, come back together and discuss:]</p>
+            <ul>
+              <li>[WONDER-style question: what does this raise for you?]</li>
+            </ul>
+          </div>
+        </details>
+
+        <details id="step-2">
+          <summary><span><b>02 · Investigate</b> [Short step title]</span><em>15 mins</em></summary>
+          <div class="detail-body">
+            <h3>[Step 2 lead-in line: play/do through the lens of a scientist, designer, etc.]</h3>
+            <p>[What the hands-on activity/game/tool is and what to pay attention to while doing it.]</p>
+            <ul>
+              <li>[Investigative question 1]</li>
+              <li>[Investigative question 2]</li>
+              <li>[Investigative question 3]</li>
+            </ul>
+            <!-- Optional: link out to a companion game/tool -->
+            <a class="game-button" href="[link to game/tool]" target="_blank" rel="noopener">Play [Tool Name] <small>[Any access note]</small></a>
+            <p class="device-note">[Device requirement, if any: e.g. "Use a laptop or desktop with a webcam." Delete this line if there's no special requirement.]</p>
+          </div>
+        </details>
+
+        <details id="step-3">
+          <summary><span><b>03 · Reflect</b> [Short step title]</span><em>15 mins</em></summary>
+          <div class="detail-body">
+            <h3>[Step 3 lead-in line: pause and make sense of it.]</h3>
+            <p>[Instruction: reflect independently, then share/compare.]</p>
+            <ul>
+              <li>[A genuine reflective question the learner answers in their own words.]</li>
+              <li>[A second reflective question, e.g. what are you still wondering?]</li>
+            </ul>
+          </div>
+        </details>
+
+        <details id="step-4">
+          <summary><span><b>04 · Create</b> [Short step title]</span><em>15 mins</em></summary>
+          <div class="detail-body">
+            <h3>[Step 4 lead-in line: put understanding to work.]</h3>
+            <p>[The applied task: what learners build, draw, write or design, and with what materials.]</p>
+            <ul>
+              <li>[What the output should show 1]</li>
+              <li>[What the output should show 2]</li>
+              <li>[What the output should show 3]</li>
+            </ul>
+            <!-- Optional: a small discussion prompt block -->
+            <div class="create-questions">
+              <p><b>Discuss</b></p>
+              <ol>
+                <li>[Discussion question 1]</li>
+                <li>[Discussion question 2]</li>
+              </ol>
+            </div>
+            <!-- Optional: a closing sentence-completion prompt -->
+            <p class="finish-line"><b>Finish this sentence:</b><br>We would __________ because it would help __________ and __________.</p>
+          </div>
+        </details>
+
+      </div>
+
+      <!-- Optional: an educator feedback prompt, shown after the journey -->
+      <aside class="feedback">
+        <p class="section-kicker">Tried this with your class?</p>
+        <p><b>Share what you observed:</b> Where did learners become curious? What connections did they make? What did their final ideas reveal about their understanding? What would strengthen the experience?</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ============ FURTHER READING (optional section) ============
+       Delete this whole <section> if there's nothing to link out to. -->
+  <section class="resources" id="resources">
+    <div class="shell">
+      <p class="section-kicker">Further reading</p>
+      <h2>Explore the science.</h2>
+      <div class="resource-grid">
+        <a class="resource-card" href="[external article URL]" target="_blank" rel="noopener">
+          <span class="resource-type">[Source name]</span>
+          <div>
+            <h3>[Article title]</h3>
+            <p>[One-sentence description of what the article covers.]</p>
+            <div class="resource-action">Read article</div>
+          </div>
+        </a>
+        <a class="resource-card" href="[external article URL]" target="_blank" rel="noopener">
+          <span class="resource-type">[Source name]</span>
+          <div>
+            <h3>[Article title]</h3>
+            <p>[One-sentence description of what the article covers.]</p>
+            <div class="resource-action">Read article</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CROSS-LINK TO A RELATED PROGRAMME (optional) ============
+       Delete this whole <section> if there's no sibling experience to
+       point to. -->
+  <section class="next-ecosystem">
+    <div class="shell next-inner">
+      <div>
+        <p class="section-kicker">Explore another [related topic]</p>
+        <h2>[One line connecting this programme to the related one.]</h2>
+        <p>Visit <i>[Related Programme Name]</i> to [one clause describing what it offers].</p>
+      </div>
+      <a href="[link to related programme]" target="_blank" rel="noopener">Visit [Related Programme Name]</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="shell footer-inner">
+    <img class="footer-logo" src="assets/logos/OceanX-Education-Logo-White.png" alt="OceanX Education">
+    <p class="footer-copy">[Programme Name] is a[n immersive/classroom] OceanX Education experience about [one clause describing the programme].</p>
+  </div>
+</footer>
+
+<!-- Progress-nav scroll-spy + click-to-open. Generic: works against
+     any .progress a[data-step] / details[id] pair, no per-project
+     edits needed as long as the ids match. -->
+<script>(function(){
+var links=document.querySelectorAll('.progress a');
+links.forEach(function(a){
+a.addEventListener('click',function(){
+var d=document.getElementById(a.getAttribute('data-step'));
+if(d)d.open=true;
+});
+});
+if('IntersectionObserver' in window){
+var observer=new IntersectionObserver(function(entries){
+entries.forEach(function(entry){
+if(!entry.isIntersecting)return;
+var link=document.querySelector('.progress a[data-step="'+entry.target.id+'"]');
+if(!link)return;
+links.forEach(function(a){a.classList.remove('current');});
+link.classList.add('current');
+});
+},{rootMargin:'-45% 0px -50% 0px',threshold:0});
+links.forEach(function(a){
+var el=document.getElementById(a.getAttribute('data-step'));
+if(el)observer.observe(el);
+});
+}
+})();</script>
+</body></html>

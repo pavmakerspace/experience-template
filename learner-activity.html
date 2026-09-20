@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>[Programme Name] | Learner Activity</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23002F6C'/%3E%3C/svg%3E">
+<style>
+@font-face{font-family:'Zeist';src:url('assets/fonts/ZeistN2-Light.otf') format('opentype');font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:'Zeist';src:url('assets/fonts/ZeistN2-Regular.otf') format('opentype');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Zeist';src:url('assets/fonts/ZeistN2-Medium.otf') format('opentype');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'Zeist';src:url('assets/fonts/ZeistN2-SemiBold.otf') format('opentype');font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:'Zeist';src:url('assets/fonts/ZeistN2-Bold.otf') format('opentype');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:'DM Mono';src:url('assets/fonts/DMMono-Medium.ttf') format('truetype');font-weight:500;font-style:normal;font-display:swap}
+:root{--deep:#002F6C;--ocean:#0072CE;--moss:#2DA2BF;--lime:#FFC846;--paper:#fff;--wash:#eef2e7;--ink:#0b2940;--muted:#5B6770;--line:rgba(11,41,64,.24);--font:"Zeist","Avenir Next",Avenir,Arial,sans-serif;--mono:"DM Mono","SFMono-Regular",monospace}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#dfe6e3;color:var(--ink);font-family:var(--font);line-height:1.3;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.print-bar{width:min(210mm,calc(100% - 24px));margin:14px auto 0;padding:10px 14px;display:flex;align-items:center;justify-content:space-between;gap:16px;background:#fff;border-radius:8px;box-shadow:0 2px 14px rgba(6,59,67,.1);font-size:12px;color:var(--muted)}
+.print-nav{flex:1 1 auto;display:flex;align-items:center;gap:8px;flex-wrap:wrap;min-width:0}
+.print-nav a{color:var(--ocean);text-decoration:none;font-weight:700}
+.print-nav a:hover{text-decoration:underline}
+.print-nav .sep{color:var(--line)}
+.print-nav .switch{margin-left:auto;padding-left:8px}
+button{padding:8px 14px;border:0;border-radius:99px;color:#fff;background:var(--deep);font:800 10px/1 var(--font);letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
+.sheet{position:relative;width:210mm;min-height:297mm;margin:14px auto 24px;padding:12mm 14mm 9mm;overflow:hidden;background:var(--paper);box-shadow:0 6px 26px rgba(6,59,67,.14)}
+header{display:grid;grid-template-columns:1fr auto;gap:10mm;align-items:end;margin-bottom:4mm}
+.kicker,.step{font-size:7.2px;font-weight:850;letter-spacing:.15em;text-transform:uppercase;font-family:var(--mono)}
+.kicker,.step{color:var(--moss)}
+h1{font-size:34px;line-height:.88;letter-spacing:-.05em;text-transform:uppercase}
+h1 span{display:block;color:var(--ocean)}
+.strap{margin-top:2.5mm;color:var(--muted);font-size:8.5px}
+.identity{width:55mm;display:grid;gap:3mm}
+.identity label{display:grid;grid-template-columns:auto 1fr;gap:3mm;align-items:end;font-size:7px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.identity i{height:4mm;border-bottom:1px solid var(--ink)}
+.journey{display:grid;grid-template-columns:repeat(4,1fr);margin-bottom:4mm;border-top:1px solid var(--ink);border-bottom:1px solid var(--line)}
+.journey span{padding:2.1mm 0;color:var(--muted);font-size:7px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+.journey b{color:var(--ocean);margin-right:1mm}
+.section-head{display:flex;align-items:baseline;gap:2mm;margin-bottom:2mm}
+h2{font-size:13px;line-height:1;text-transform:uppercase}
+.hint{margin-left:auto;color:var(--muted);font-size:7.2px;text-align:right}
+.explore-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:3mm;margin-bottom:3.5mm}
+.prompt{min-height:29mm;padding:3mm;border-top:3px solid var(--moss);background:var(--wash)}
+.prompt h3{margin-bottom:1.5mm;font-size:8px;text-transform:uppercase}
+.prompt p{font-size:7px;color:var(--muted)}
+.lines{height:14mm;margin-top:1.5mm;background:repeating-linear-gradient(to bottom,transparent 0 4.3mm,var(--line) 4.5mm 4.7mm)}
+.middle{display:grid;grid-template-columns:1.15fr .85fr;gap:4mm;margin-bottom:3.5mm}
+.investigate,.reflect{padding:3mm 4mm;border:1px solid var(--line)}
+.investigate{border-left:4px solid var(--ocean)}
+.investigate p,.reflect p{font-size:7px;color:var(--muted)}
+.chain{display:grid;grid-template-columns:repeat(4,1fr);gap:2mm;margin:2mm 0}
+.chain span{position:relative;padding:2mm 1.5mm;border:1px solid var(--line);font-size:6.5px;font-weight:800;text-align:center}
+.chain span:not(:last-child):after{content:"·";position:absolute;right:-2mm;color:var(--ocean)}
+.reflect .lines{height:17mm}
+.create{padding:3.5mm 4mm 3mm;border:1px solid var(--ink);border-top:4px solid var(--deep)}
+.create-copy{display:flex;gap:4mm;align-items:baseline;margin-bottom:2mm}
+.create-copy p{margin-left:auto;max-width:120mm;color:var(--muted);font-size:7px;text-align:right}
+/* Drawing/mapping canvas for the Create phase. If you have a custom
+   illustration (like Kelp's kelp-forest colouring page), drop it in
+   assets/images/ and point .forest at it. If not, leave the <img>
+   out entirely — .map's border + centre-label alone still works as
+   a blank canvas with labelled corner prompts. */
+.map{position:relative;height:89mm;overflow:hidden;border:1px solid var(--line);background:#fff}
+.forest{position:absolute;z-index:1;left:50%;top:48%;width:78mm;max-width:90%;transform:translate(-50%,-50%)}
+.centre-label{position:absolute;z-index:2;left:50%;bottom:7mm;transform:translateX(-50%);padding:1.5mm 3mm;background:#fff;border:1px solid var(--line);font-size:7px;font-weight:850;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+.map-note{position:absolute;z-index:2;width:37mm;padding:2mm;background:rgba(255,255,255,.92);border-bottom:1px solid var(--line);font-size:6.4px;color:var(--muted)}
+.map-note b{display:block;color:var(--moss);font-size:6.5px;text-transform:uppercase}
+.n1{left:4mm;top:5mm}
+.n2{right:4mm;top:5mm}
+.n3{left:4mm;bottom:6mm}
+.n4{right:4mm;bottom:6mm}
+.finish{margin-top:2mm;padding-top:2mm;border-top:1px solid var(--line);font-size:7px}
+.finish b{color:var(--ocean)}
+footer{display:flex;justify-content:space-between;align-items:flex-end;margin-top:3mm;padding-top:2.5mm;border-top:1px solid var(--line)}
+footer span{color:var(--muted);font-size:6.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+.logo{width:30mm;height:auto}
+@page{size:A4 portrait;margin:0}
+@media print{body{background:#fff}.print-bar{display:none}.sheet{width:210mm;height:297mm;min-height:297mm;margin:0;box-shadow:none}}
+@media screen and (max-width:840px){body{background:#fff}.print-bar{width:100%;margin:0;border-radius:0;flex-wrap:wrap;row-gap:8px}.print-nav{width:100%}.print-nav .switch{margin-left:0;flex-basis:100%}button{flex:0 0 auto}.sheet{width:100%;min-height:0;margin:0;padding:28px 20px;overflow:visible;box-shadow:none}header{display:block}.kicker{font-size:9px}h1{margin-top:8px;font-size:clamp(42px,15vw,62px)}.strap{font-size:14px}.identity{width:100%;grid-template-columns:1fr 1fr;margin-top:24px}.identity label{font-size:9px}.identity i{height:24px}.journey{display:block;margin:28px 0}.journey span{display:block;padding:12px 0;border-bottom:1px solid var(--line);font-size:10px}.section-head,.create-copy{display:block}.step{display:block;margin-bottom:7px;font-size:9px}h2{font-size:22px}.hint,.create-copy p{margin:8px 0 0;max-width:none;font-size:14px;text-align:left}.explore-grid,.middle{display:block}.prompt,.investigate,.reflect{margin-bottom:18px;padding:18px}.prompt h3{font-size:13px}.prompt p,.investigate p,.reflect p{font-size:14px}.lines,.reflect .lines{height:110px;background:repeating-linear-gradient(to bottom,transparent 0 28px,var(--line) 29px 30px)}.chain{grid-template-columns:1fr}.chain span{padding:12px;font-size:12px}.chain span:after{display:none}.create{padding:18px}.map{height:auto;display:block;padding:16px 0}.map:before,.map:after{display:none}.forest{position:static;left:auto;top:auto;transform:none;width:70%;height:auto;margin:0 auto 16px;display:block}.map-note{position:static;width:100%;margin-bottom:10px;padding:12px 14px;font-size:13px}.map-note b{font-size:11px}.centre-label{position:static;display:block;left:auto;bottom:auto;transform:none;width:max-content;max-width:90%;margin:0 auto 16px;white-space:normal;text-align:center;font-size:12px}.finish{font-size:13px;line-height:1.5}footer{margin-top:24px}.logo{width:115px}}
+</style>
+</head>
+<body>
+<aside class="print-bar"><nav class="print-nav"><a href="index.html" onclick="if(history.length>1){history.back();return false;}">Back to [Programme Name]</a><span class="sep">·</span><b>Learner Activity</b><a class="switch" href="educator-guide.html">View Educator Guide</a></nav><button onclick="window.print()">Print / Save PDF</button></aside>
+<main class="sheet">
+<header><div><div class="kicker">Ocean field notes · Learner activity</div><h1>[First <span>Word]</span></h1><p class="strap">[A short, second-person instruction line — "Look closer. Follow the relationships. Make sense of what changes."]</p></div><div class="identity"><label>Names <i></i></label><label>Group <i></i></label></div></header>
+<nav class="journey"><span><b>01</b> Explore</span><span><b>02</b> Investigate</span><span><b>03</b> Reflect</span><span><b>04</b> Create</span></nav>
+
+<section><div class="section-head"><span class="step">01</span><h2>[Step 1 short title]</h2><p class="hint">Capture what you notice as you watch.</p></div><div class="explore-grid">
+<article class="prompt"><h3>[Prompt 1 title]</h3><p>[Prompt 1 question]</p><div class="lines"></div></article>
+<article class="prompt"><h3>[Prompt 2 title]</h3><p>[Prompt 2 question]</p><div class="lines"></div></article>
+<article class="prompt"><h3>[Prompt 3 title]</h3><p>[Prompt 3 question]</p><div class="lines"></div></article>
+<article class="prompt"><h3>Your question</h3><p>What do you want to investigate?</p><div class="lines"></div></article>
+</div></section>
+
+<section class="middle">
+<div class="investigate"><div class="section-head"><span class="step">02</span><h2>[Step 2 short title]</h2></div><p>[Instruction for completing a structured response — e.g. a causal chain, a diagram, a table.]</p><!-- Optional causal chain, delete if not applicable --><div class="chain"><span>[Cause]</span><span>More ______</span><span>Less ______</span><span>The ______</span></div><p><b>[Follow-up question]</b></p><div class="lines"></div></div>
+<div class="reflect"><div class="section-head"><span class="step">03</span><h2>What shifted?</h2></div><p><b>What did you discover?</b> Write one idea that changed how you think about [topic].</p><div class="lines"></div></div>
+</section>
+
+<section class="create"><div class="create-copy"><div><span class="step">04</span><h2>[Step 4 short title]</h2></div><p>[Instruction for the drawing/mapping/building task and what to add to it.]</p></div>
+<div class="map">
+  <!-- Optional custom illustration — see comment in <style> above.
+  <img class="forest" src="assets/images/[your-illustration].webp" alt="[Description for screen readers]"> -->
+  <span class="centre-label">[Centre label, e.g. "A healthy [system]"]</span>
+  <div class="map-note n1"><b>[Category 1]</b>[Prompt question]</div>
+  <div class="map-note n2"><b>[Category 2]</b>[Prompt question]</div>
+  <div class="map-note n3"><b>[Category 3]</b>[Prompt question]</div>
+  <div class="map-note n4"><b>[Category 4]</b>[Prompt question]</div>
+</div>
+<p class="finish"><b>Our action:</b> We would __________________ because it would help __________________ and __________________.</p></section>
+
+<footer><span>[Programme Name] · [Short tagline]</span><img class="logo" src="assets/logos/OceanX-Education-Logo-Dark.png" alt="OceanX Education"></footer>
+</main>
+</body></html>
