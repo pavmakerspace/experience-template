@@ -1108,3 +1108,21 @@
         width: 90px
       }
     }
+
+    @media print {
+      body,
+      .sheet,
+      .middle,
+      .create,
+      .panel,
+      .phase,
+      .note {
+        color: #102f32;
+        background: #fff !important;
+      }
+
+      .sheet:last-of-type {
+        break-after: auto;
+        page-break-after: auto;
+      }
+    }
