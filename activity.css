@@ -38,7 +38,7 @@
                align-items: center;
                justify-content: space-between;
                gap: 16px;
-               background: #fff;
+               background: #f3f7f5;
                border-radius: 8px;
                box-shadow: 0 2px 14px rgba(6, 59, 67, .1);
                font-size: 12px;
@@ -1126,3 +1126,15 @@
         page-break-after: auto;
       }
     }
+
+          /* Final shared document type scale */
+          .print-bar,
+          .print-action-bar { font-size: 12px; }
+          .print-bar > button,
+          .print-btn { font-size: 11px; }
+          .page-guide .body,
+          .page-guide .col-copy { font-size: 10px; }
+          .page-activity .prompt p,
+          .page-activity .investigate p,
+          .page-activity .reflect p { font-size: 10px; }
+

@@ -11,14 +11,14 @@
           href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23002F6C'/%3E%3C/svg%3E">
 </head>
 
-<body>
+<body class="page-guide">
      <!-- Back link uses history.back() with an index.html fallback, so it
      works whether the guide was opened from the homepage or directly
      (e.g. a bookmark / shared link). Don't hardcode it to always go
      to index.html — see the commit history in I Am Kelp / Seagrass
      Stories for why this matters. -->
      <aside class="print-bar">
-          <nav class="print-nav"><a href="index.html" onclick="if(history.length>1){history.back();return false;}">Back
+          <nav class="print-nav"><a href="index.html" onclick="if(history.length>1){history.back();return false;}"><span aria-hidden="true">&lt;&lt;</span> Back
                     to [Programme Name]</a><span class="sep">·</span><b>Educator Guide</b><a class="switch"
                     href="learner-activity.html">View Learner Activity</a></nav><button onclick="window.print()">Print /
                Save PDF</button>
