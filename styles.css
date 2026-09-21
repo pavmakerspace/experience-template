@@ -91,7 +91,7 @@ h1,h2,h3,p{margin-top:0}
 /* ---------- Hero ---------- */
 .hero{position:relative;min-height:496px;display:grid;align-items:end;overflow:hidden;color:var(--foam);background:var(--deep)}
 .hero-content{position:relative;z-index:1;padding:1.6rem 0 4rem;display:grid;grid-template-columns:minmax(0,1.45fr) minmax(300px,.75fr);align-items:end;gap:4rem}
-h1{max-width:760px;margin-bottom:1.2rem;font-size:clamp(2.5rem,5vw,4.5rem);font-weight:500;line-height:1.12;letter-spacing:-.03em}
+h1{max-width:760px;margin-bottom:1.2rem;font-size:clamp(2.5rem,5vw,4.5rem);font-weight:500;line-height:1.12;letter-spacing:-.02em}
 .hero-lead{max-width:680px;margin-bottom:0;color:rgba(234,247,250,.86);font-size:clamp(1.05rem,2vw,1.35rem);font-weight:300;line-height:1.5}
 
 /* Optional hero side panel, e.g. a "Play the game" CTA card.
@@ -121,7 +121,7 @@ h1{max-width:760px;margin-bottom:1.2rem;font-size:clamp(2.5rem,5vw,4.5rem);font-
 /* ---------- Full-bleed sections (generic rhythm/spacing) ---------- */
 main section{padding-block:clamp(4rem,8vw,7rem)}
 .section-kicker{margin-bottom:.85rem;color:var(--moss);font-size:.76rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;font-family:var(--mono)}
-h2{max-width:850px;margin-bottom:1.1rem;font-size:clamp(2.15rem,5vw,4.2rem);font-weight:500;line-height:1.15;letter-spacing:-.03em}
+h2{max-width:850px;margin-bottom:1.1rem;font-size:clamp(2.15rem,5vw,4.2rem);font-weight:500;line-height:1.15;letter-spacing:-.02em}
 
 /* .overview: one-paragraph "what this experience is" band, dark solid fill */
 .overview{padding-block:clamp(1.6rem,3.2vw,2.8rem);color:var(--foam);background:var(--abyss)}
