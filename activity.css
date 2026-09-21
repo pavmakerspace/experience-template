@@ -24,7 +24,8 @@
                background: #dfe6e3;
                color: var(--ink);
                font-family: var(--font);
-               line-height: 1.4;
+               font-weight: 300;
+               line-height: 1.55;
                -webkit-print-color-adjust: exact;
                print-color-adjust: exact
           }
@@ -120,8 +121,9 @@
           h1 {
                margin-top: 2mm;
                font-size: 30px;
-               line-height: .92;
-               letter-spacing: -.04em;
+               font-weight: 500;
+               line-height: 1.12;
+               letter-spacing: -.03em;
                text-transform: uppercase
           }
 
@@ -156,13 +158,16 @@
           .question {
                max-width: 155mm;
                font-size: 24px;
-               line-height: 1.1;
-               letter-spacing: -.035em
+               font-weight: 500;
+               line-height: 1.2;
+               letter-spacing: -.025em
           }
 
           .body {
                color: var(--muted);
-            font-size: 10px
+            font-size: 10px;
+            font-weight: 300;
+            line-height: 1.5
           }
 
           .body strong {
